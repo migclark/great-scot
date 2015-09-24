@@ -7,8 +7,18 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "aws-sdk": "^2.2.4",
+    "body-parser": "^1.14.0",
     "ejs": "2.3.3",
-    "express": "4.13.3"
+    "errorhandler": "^1.4.2",
+    "express": "4.13.3",
+    "express-session": "^1.11.3",
+    "method-override": "^2.3.5",
+    "morgan": "^1.6.1",
+    "multer": "^1.0.5",
+    "node-uuid": "^1.4.3",
+    "path": "^0.12.7",
+    "serve-favicon": "^2.3.0"
   },
   "engines": {
     "node": "0.12.7"
