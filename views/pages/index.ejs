@@ -4,35 +4,93 @@
   <% include ../partials/header.ejs %>
 </head>
 
-<body style="background-color: #242424;">
+<body>
 
-<div style="background: url('/images/home.png') center no-repeat;height: 2286px;position: relative;width: 1206px;margin: 0px auto;">
 
-  <a href="/" style="position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100px;
-    height: 100px;
-    display: block;"></a>
 
-  <a href="/signup" style="position: absolute;
-    right: 26px;
-    top: 27px;
-    width: 234px;
-    height: 50px;
-    display: block;"></a>
+<div class="header container">
 
-  <a href="/category" style="
-    position: absolute;
-    left: 96px;
-    top: 751px;
-    width: 1014px;
-    height: 1320px;
-    display: block;
-    "></a>
+  <div class="header-top">
+    <div class="logo pull-left"><img src="/images/logo.png"></div>
+    <div class="links showifloggedout pull-right"><a href="/login">Log In</a></div>
+    <div class="links showifloggedout pull-right"><a href="/signup">Sign Up</a></div>
+    <div class="links showifloggedin pull-right"><a href="/profile">Profile</a></div>
+  </div>
+
+
+  <div class="header-body text-center">
+    <h2>Shutr</h2>
+    <h3>Find Local Photographers</h3>
+  </div>
+</div>
+
+
+<div class="search container text-center">
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-8">
+      <input type="text" class="searchtext form-control" id="seachtext" placeholder="Search by Category, Name, Location">
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <button class="searchbutton btn btn-default" id="searchbutton">Search</button>
+    </div>
+  </div>
 
 </div>
 
+
+<div class="feature container">
+
+<div class="row">
+    <div class="feature-text col-xs-12 col-sm-6">
+      <h2>Let's turn moment into memories</h2>
+      <p>Sign up as a local photographer and turns clicsk into cash,
+        workign with local families and businesses</p>
+      <button class="featurebutton btn btn-default" id="featurebutton">Sign Up</button>
+    </div>
+    <div class="feature-image col-xs-12 col-sm-6">
+      <img src="/images/image01.jpg">
+    </div>
+  </div>
+</div>
+
+<div class="text container text-center">
+  <h1>Support Local Artists</h1>
+  <h4>Easily connect with local photographers in your area</h4>
+</div>
+
+<div class="popular-categories container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-7">
+      <div class="prom popular trending text-center">
+        <h2>Prom</h2>
+        <p>Trending</p>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-5">
+      <div class="houses popular text-center">
+        <h2>Houses</h2>
+        <p>Popular</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-5">
+      <div class="pets popular text-center">
+        <h2>Pets</h2>
+        <p>Popular</p>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-7">
+      <div class="portrait popular text-center">
+        <h2>Portrait</h2>
+        <p>Popular</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer.ejs %>
 
 </body>
 </html>
