@@ -4,26 +4,96 @@
   <% include ../partials/header.ejs %>
 </head>
 
-<body style="background-color: #242424;">
+<body>
+  <% include ../partials/gtm.ejs %>
 
-<div style="background: url('/images/category.png') center no-repeat;height: 1799px;position: relative;width: 1024px;margin: 0px auto;">
-  <a href="/" style="position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100px;
-    height: 100px;
-    display: block;"></a>
-  
-  <a href="/signup" style="position: absolute;
-    right: 26px;
-    top: 24px;
-    width: 154px;
-    height: 50px;
-    display: block;"></a>
-  
-</div>
+  <% include ../partials/nav.ejs %>
 
+  <header style="background-image:url(/images/category/<%= category.name.toLowerCase() %>.jpg)"">
 
+    <div class="text-center" style="margin: 0 auto;padding: 10em 0 10em;">
+      <h2 style="font-size: 4em;font-weight: bold;"><%= category.name.toUpperCase() %></h2>
+      <h3 style="font-size: 1.8em;"><%= category.tagline %></h3>
+    </div>
+
+    <% include ../partials/search.ejs %>
+  </header>
+
+  <section class="category-content">
+
+  <article style="background-color:#fff;color:#000;padding: 1em 0;">
+
+    <div class="container" style="max-width: 40em;">
+      <div class="row">
+        <div class="col-xs-12 col-sm-7">
+          <div>
+            <h2>Name Here</h2>
+            <h4>Location Here</h4>
+            <button class="btn" type="button">Insta</button>
+            <button class="btn" type="button">$$$$$</button>
+            <p style="margin: 1em auto;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Nam magna nisi, varius ut consequat id, venenatis feugiat odio.
+              Proin congue, massa vitae porta suscipit, mauris urna auctor velit,
+              dignissim vulputate odio arcu lobortis ex.</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-5">
+          <div class="text-center">
+            <div>
+              <img src="/images/profilethumb.jpg" alt="Profile pic">
+            </div>
+            <div style="margin: 1em auto;">
+              <button class="btn" type="button">Contact</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="links" style="text-align: center;margin: 0 -4em;">
+      <a href="images/thumb1.png" title="Banana" data-gallery="">
+        <img src="images/thumb1.png" alt="Banana">
+      </a>
+      <a href="images/thumb2.png" title="Apple" data-gallery="">
+        <img src="images/thumb2.png" alt="Apple">
+      </a>
+      <a href="images/thumb3.png" title="Orange" data-gallery="">
+        <img src="images/thumb3.png" alt="Orange">
+      </a>
+      <a href="images/thumb1.png" title="Banana" data-gallery="">
+        <img src="images/thumb1.png" alt="Banana">
+      </a>
+      <a href="images/thumb2.png" title="Apple" data-gallery="">
+        <img src="images/thumb2.png" alt="Apple">
+      </a>
+    </div>
+
+  </article>
+
+</section>
+
+  <% include ../partials/footer.ejs %>
+
+  <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+  <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+      <div class="slides"></div>
+      <h3 class="title"></h3>
+      <a class="prev">‹</a>
+      <a class="next">›</a>
+      <a class="close">×</a>
+      <a class="play-pause"></a>
+      <ol class="indicator"></ol>
+  </div>
+  <script>
+  document.getElementById('links').onclick = function (event) {
+      event = event || window.event;
+      var target = event.target || event.srcElement,
+          link = target.src ? target.parentNode : target,
+          options = {index: link, event: event},
+          links = this.getElementsByTagName('a');
+      blueimp.Gallery(links, options);
+  };
+  </script>
 </body>
 
 </html>

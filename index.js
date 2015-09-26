@@ -13,7 +13,7 @@ var app = express();
 app.set('port', process.env.PORT || 5000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
-app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(favicon(__dirname + '/public/favicon.png'));
 app.use(logger('dev'));
 app.use(methodOverride());
 app.use(session({ resave: true,
@@ -38,10 +38,27 @@ if(process.env.NODE_ENV == 'prod') {
 
 // routes
 app.get('/', function(request, response) {
-  response.render('pages/index');
+  var categories = [
+    { name: 'Action', tagline: 'Trending'},
+    { name: 'Drone', tagline: 'Popular'},
+    { name: 'Family', tagline: 'Popular'},
+    { name: 'Fashion', tagline: 'Popular'},
+    { name: 'Food', tagline: 'Popular'},
+    { name: 'Portrait', tagline: 'Popular'},
+    { name: 'Product', tagline: 'Popular'},
+    { name: 'Property', tagline: 'Popular'},
+    { name: 'Swim', tagline: 'Popular'},
+    { name: 'Wedding', tagline: 'Popular'}
+  ];
+  response.render('pages/index', {
+    categories: categories
+  });
 });
-app.get('/category', function(request, response) {
-  response.render('pages/category');
+app.get('/category/:category', function(request, response) {
+  var category = {name: request.params.category, tagline: request.params.category};
+  response.render('pages/category', {
+    category: category
+  });
 });
 app.get('/signup', function(request, response) {
   response.render('pages/signup');
