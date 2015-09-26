@@ -66,6 +66,9 @@ app.get('/signup', function(request, response) {
 app.get('/profile', function(request, response) {
   response.render('pages/profile');
 });
+app.get('/terms', function(request, response) {
+  response.render('pages/terms');
+});
 
 app.listen(app.get('port'), function() {
   console.log('Express server listening on port', app.get('port'));
