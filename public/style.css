@@ -92,6 +92,7 @@ a:hover {
 
 /* Header */
 header.category {
+  background-size:cover;
   background-image: none;
   background-color: #333;
 }
