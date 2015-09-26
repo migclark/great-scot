@@ -82,6 +82,7 @@ a:hover {
 /* NavBar */
 .navbar-toggle {
   border-color: #fff;
+  margin: 1.5em 1em;
 }
 .navbar-toggle .icon-bar {
   background-color: #fff;
@@ -89,9 +90,17 @@ a:hover {
 .navbar-collapse.collapsing,.navbar-collapse.collapse.in {
   background:#2f2f2f;
 }
+.navbar img.logo {
+  width: 40px
+}
+.navbar-nav {
+  font-size: 1.5em;
+  margin-top: 0.5em;
+}
 
 /* Header */
-header.category {
+header {
+  background-position: center;
   background-size:cover;
   background-image: none;
   background-color: #333;
@@ -160,13 +169,23 @@ ul.category-list li:nth-child(4n+2),ul.category-list li:nth-child(4n+3) {
 }
 
 .category {
+  margin: 0 auto 2em;
+  background-size: cover;
+  background-position: center;
+  max-width: 400px;
+}
+.category-inner {
   padding: 5em 0;
-  margin-bottom: 2em;
-  background-size: 200%;
+  width:100%;
+  background-color: rgba(0, 0, 0, 0.28);
 }
 .category:hover {
-  background-size: 250%;
+  background-size: 150%;
 }
 /* Signup Page */
 
 /* Category Page */
+#links img {
+  margin: 0.2em 0em;
+  width: 250px;
+}

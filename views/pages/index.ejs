@@ -14,7 +14,7 @@
 <% var i = Math.floor(Math.random() * (categories.length - 1)); %>
   <header style="background-image:url(/images/category/<%= categories[i].name.toLowerCase() %>.jpg)">
 
-    <div class="text-center" style="margin: 0 auto;padding: 10em 0 10em;">
+    <div class="text-center" style="margin: 0 auto;padding: 10em 0 10em;background-color: rgba(0, 0, 0, 0.28);">
       <h2 style="font-size: 4em;font-weight: bold;">Shutr</h2>
       <h3 style="font-size: 1.8em;">Find Local Photographers</h3>
     </div>
@@ -23,7 +23,7 @@
 
   <article style="background-color:#EDEFED;color: #565A5C;padding-top: 2em;">
 
-    <section class="featured container">
+    <section class="featured container" style="max-width:750px">
       <div class="row">
         <div class="col-xs-12 col-sm-6">
           <div style="padding:2em">
@@ -47,7 +47,7 @@
       <h4>Easily connect with local photographers in your area</h4>
     </section>
 
-    <section class="container">
+    <section class="container" style="max-width:750px">
 
 
       <% for(var i=0; i<categories.length; i++){ %>
@@ -55,11 +55,13 @@
       <%   if (i%2 == 0) { %>
         <div class="row">
       <%   } %>
-            <div class="col-xs-12 col-sm-<%= (i%4 == 0 || i%4-3 == 0) ? 7 : 5; %>">
+            <div class="col-xs-12 <%= (i%4 == 0 || i%4 == 3) ? 'col-sm-7' : 'col-sm-5'; %>">
                 <a href="/category/<%= categories[i].name.toLowerCase() %>">
                   <div class="category text-center" style="background-image: url(/images/category/<%= categories[i].name.toLowerCase() %>.jpg);">
-                    <h2><%= categories[i].name.toUpperCase() %></h2>
-                    <p><%= categories[i].tagline %></p>
+                    <div class="category-inner">
+                      <h2><%= categories[i].name.toUpperCase() %></h2>
+                      <p><%= categories[i].tagline %></p>
+                    </div>
                   </div>
                 </a>
             </div>
